@@ -1,0 +1,19 @@
+from collections import namedtuple as nt
+n,l = (int(input()),0)
+sec = nt('sec',input().split())
+for i in range(n):
+    l+= int(sec(*(input().split())).MARKS)
+print(l/n)
+
+from collections import OrderedDict
+words = OrderedDict()
+for i in range(int(input())):
+    k = input().split('\r')[0]
+    words[k] = 1+words[k] if k in words.keys() else 1
+print(len(words.items()))
+print(*list(words.values()),sep=' ')
+
+for i in range(int(input())):
+    (n,lens) =(int(input()),list(map(int,input().split())))
+    bound_max = max(lens[0],lens[-1])
+    print("Yes" if max(lens)==bound_max else "No")
